@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="Style.css">
+    
+</head>
+<body>
+
+    <ul>
+        <li><a href="#" onclick="moveCircle(this)"><i class="fa-solid fa-upload fa-2x"></i></a></li>
+        <li><a href="#" onclick="moveCircle(this)"><i class="fa-regular fa-pen-to-square fa-2x"></i></a></li>
+        <li><a href="#" onclick="moveCircle(this)"><i class="fa-solid fa-trash fa-2x"></i></a></li>
+        <li><a href="#" onclick="moveCircle(this)"><i class="fa-solid fa-magnifying-glass fa-2x"></i></a></li>
+    </ul>
+
+
+    <div class="fondo-iconos">
+        <div class="vista-central"></div>
+    </div>
+
+    <script>
+        function moveCircle(element) {
+            var circle = document.getElementById('movingCircle');
+            var rect = element.getBoundingClientRect();
+            var offsetY = rect.top + window.scrollY + rect.height / 2 - circle.clientHeight / 2;
+
+            // Desplaza el círculo hacia la derecha
+            circle.style.transform = 'translateX(' + (rect.right + window.scrollX + 10) + 'px) translateY(' + offsetY + 'px)';
+
+            // Resetea la posición después de un breve retraso (500 ms)
+            setTimeout(function() {
+                circle.style.transform = 'translateX(0) translateY(' + offsetY + 'px)';
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>

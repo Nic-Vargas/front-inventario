@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #a6e4a6; /* Color de fondo opcional */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 160px;
+    background-color: #a6e4a6; /* Color verde claro */
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    margin-right: auto; /* Alinea a la izquierda */
+}
+
+li {
+    flex-grow: 1;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 65px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 0px solid #ddd;
+    flex-grow: 1;
+    border-radius: 100px; /* Hace que el botón sea circular */
+    transition: background-color 0.3s;
+}
+
+li a:hover {
+    background-color: #ddd;
+}
+
+.fondo-iconos {
+    width: 5000px;
+    height: 1200px;
+    background-color: #fff; /* Color blanco */
+    margin: auto; /* Centra horizontalmente */
+    transition: transform 0.3s ease-in-out; /* Transición para el desplazamiento */
+}
+
+.vista-central{
+    width: 1600px;
+    height: 950px;
+    background-color: #FFCB96;
+    margin-top: 40px;
+    margin-left: 180px;
+    display: flex;
+    border-radius: 50PX;
+    
+}
+
+
+.fa-icon {
+    margin: auto; /* Centra horizontalmente */
+}
