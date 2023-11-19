@@ -18,6 +18,16 @@ ul {
     margin-right: auto; /* Alinea a la izquierda */
 }
 
+
+.Titulo{
+    font-size: 50px; /* Cambia el tamaño del texto a 36 píxeles */
+    margin-top: 50px; /* Mueve el título 50 píxeles hacia abajo desde su posición normal */
+    margin-left: 50px; /* Mueve el título 20 píxeles hacia la derecha desde su posición normal */
+    text-align: center; 
+}
+
+
+
 li {
     flex-grow: 1;
 }
@@ -67,6 +77,7 @@ li a:hover {
 .text-center{
     display: flex;
     margin-left: 100px;
+    margin-top:50px ;
 }
 
 form {
