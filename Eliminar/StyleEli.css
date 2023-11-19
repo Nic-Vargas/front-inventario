@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100px;
+ 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 870px;
+    background-color: #a6e4a6; /* Color verde claro */
+    display: flex;
+    flex-direction: column;
+    height: 1388px;
+    margin-right: auto; /* Alinea a la izquierda */
+}
+
+li {
+    flex-grow: 1;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 65px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 0px solid #ddd;
+    flex-grow: 1;
+    border-radius: 100px; /* Hace que el botón sea circular */
+    transition: background-color 0.3s;
+}
+
+li a:hover {
+    background-color: #f7f7f7;
+}
+
+.fondo-iconos {
+    width: 8000px;
+    height: 1300px;
+    background-color: #ffffff; /* Color blanco */
+    margin: auto; /* Centra horizontalmente */
+    transition: transform 0.3s ease-in-out; /* Transición para el desplazamiento */
+}
+
+.vista-central{
+    width: 1600px;
+    height: 950px;
+    background-color: #ffca96da;
+    margin-top: 200px;
+    margin-left: 480px;
+    display: flex;
+    border-radius: 50PX;
+    
+}
+
+
+.fa-icon {
+    margin: auto; /* Centra horizontalmente */
+}
+
+
+.text-center{
+    display: flex;
+    margin-left: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+label {
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(1400px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+input[type="submit"] {
+    padding: 8px 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
