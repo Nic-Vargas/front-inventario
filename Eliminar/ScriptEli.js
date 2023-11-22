@@ -5,7 +5,7 @@ boton.addEventListener("click", evento=>{
 });
 
 
-let eliminarProducto = async()=>{
+let eliminarProducto = async(id)=>{
 
   let campos = {
     id : document.getElementById("id").value,
@@ -18,8 +18,8 @@ let eliminarProducto = async()=>{
     let credentials = `${username}:${password}`;
     let encodedCredentials = btoa(credentials);
 
-    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=1", {
-      method: 'DEL',
+    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=1"+id, {
+      method: 'DELETE',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
