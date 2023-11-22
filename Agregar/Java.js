@@ -29,7 +29,7 @@ let agregarProducto = async()=>{
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${encodedCredentials}`, // Encabezado de autenticación Basic Auth
+        'Authorization': `Basic ${encodedCredentials}`,
       },
       body: JSON.stringify(campos),
     });
