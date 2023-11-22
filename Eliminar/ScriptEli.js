@@ -1,19 +1,14 @@
-let boton = document.getElementById("btnGuardar");
+let boton = document.getElementById("btnEliminar");
 
 boton.addEventListener("click", evento=>{
-    editarProducto();
+    eliminarProducto();
 });
 
 
-let editarProducto = async()=>{
+let eliminarProducto = async()=>{
 
   let campos = {
     id : document.getElementById("id").value,
-    nombre : document.getElementById("nombre").value,
-    descripcion : document.getElementById("descripcion").value,
-    precio : document.getElementById("precio").value,
-    stock : document.getElementById("stock").value,
-    categoria : document.getElementById("categoria").value
   };
 
   try {
@@ -23,8 +18,8 @@ let editarProducto = async()=>{
     let credentials = `${username}:${password}`;
     let encodedCredentials = btoa(credentials);
 
-    const peticion = await fetch("http://localhost:8080/producto/actualizar", {
-      method: 'PUT',
+    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=1", {
+      method: 'DEL',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

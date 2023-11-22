@@ -1,31 +1,35 @@
 
+let boton = document.getElementById("btnBuscar");
 
-    fetch('http://localhost:8080/verProducto/id?id=', {
-  method: 'GET', // Método HTTP (GET, POST, etc.)
-})
-  .then(response => response.json())
-  .then(data => {
-    // Hacer algo con los datos recibidos del backend
-    console.log(data);
-  })
-  .catch(error => console.error('Error:', error));
+boton.addEventListener("click", evento=>{
+    buscarProducto();
+});
 
-  fetch('http://localhost:8080/verStockPorId?id=4', {
-    method: 'GET', // Método HTTP (GET, POST, etc.)
-  })
-    .then(response => response.json())
-    .then(data => {
-      // Hacer algo con los datos recibidos del backend
-      console.log(data);
-    })
-    .catch(error => console.error('Error:', error));
 
-    fetch('http://localhost:8080/verProductoPorCategoria?categoria=Tecnologia', {
-        method: 'GET', // Método HTTP (GET, POST, etc.)
-      })
-        .then(response => response.json())
-        .then(data => {
-          // Hacer algo con los datos recibidos del backend
-          console.log(data);
-        })
-        .catch(error => console.error('Error:', error));
+let buscarProducto = async()=>{
+
+  let campos = {
+    id : document.getElementById("id").value,
+  };
+
+  try {
+    
+    let username = 'admin';
+    let password = 'claveI';
+    let credentials = `${username}:${password}`;
+    let encodedCredentials = btoa(credentials);
+
+    const peticion = await fetch("http://localhost:8080/producto/agregar", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${encodedCredentials}`,
+      },
+      body: JSON.stringify(campos),
+    });
+  }catch (error) {
+    console.error('Error:', error);
+    alert('Ha ocurrido un error al procesar la solicitud.');
+  }
+}
