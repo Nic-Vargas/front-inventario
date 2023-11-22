@@ -33,6 +33,13 @@ let agregarProducto = async()=>{
       },
       body: JSON.stringify(campos),
     });
+    if (peticion.ok) {
+      console.log('Producto agregado correctamente');
+      alert('El producto ha sido eliminado');
+    } else {
+      console.error('Error al agregar producto');
+      alert('Ha ocurrido un error al eliminar el producto.');
+    }
   }catch (error) {
     console.error('Error:', error);
     alert('Ha ocurrido un error al procesar la solicitud.');
