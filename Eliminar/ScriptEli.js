@@ -18,7 +18,7 @@ let eliminarProducto = async(id)=>{
     let credentials = `${username}:${password}`;
     let encodedCredentials = btoa(credentials);
 
-    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=1"+id, {
+    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=1", {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
