@@ -5,7 +5,7 @@ boton.addEventListener("click", evento=>{
 });
 
 
-let eliminarProducto = async(id)=>{
+let eliminarProducto = async()=>{
 
   let campos = {
     id : document.getElementById("id").value,
