@@ -10,16 +10,16 @@ let agregarProducto = async()=>{
 
   let campos = {};
 
-  campos.categoria = document.getElementById("categoria").value;
-  campos.descripcion = document.getElementById("descripcion").value;
   campos.id = document.getElementById("id").value;
   campos.nombre = document.getElementById("nombre").value;
+  campos.descripcion = document.getElementById("descripcion").value;
   campos.precio = document.getElementById("precio").value;
   campos.stock = document.getElementById("stock").value;
+  campos.categoria = document.getElementById("categoria").value;
   
   const peticion = await fetch("http://localhost:8080/producto/agregar",
   {
-    method: 'post',
+    method: 'POST',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
