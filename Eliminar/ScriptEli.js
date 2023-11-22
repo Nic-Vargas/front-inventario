@@ -5,11 +5,8 @@ boton.addEventListener("click", evento=>{
 });
 
 
-let eliminarProducto = async()=>{
+let eliminarProducto = async(id)=>{
 
-  let campos = {
-    id : document.getElementById("id").value,
-  };
 
   try {
     
@@ -18,15 +15,23 @@ let eliminarProducto = async()=>{
     let credentials = `${username}:${password}`;
     let encodedCredentials = btoa(credentials);
 
-    const peticion = await fetch("http://localhost:8080/producto/eliminar?id="+id, {
+    const peticion = await fetch("http://localhost:8080/producto/eliminar?id=${id}", {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
         'Authorization': `Basic ${encodedCredentials}`,
       },
-      body: JSON.stringify(campos),
+      body: id.toString,
     });
+    if (peticion.ok) {
+      // Manejar la respuesta exitosa
+      console.log('Producto eliminado correctamente');
+    } else {
+      // Manejar la respuesta de error
+      console.error('Error al eliminar el producto');
+      alert('Ha ocurrido un error al eliminar el producto.');
+    }
   }catch (error) {
     console.error('Error:', error);
     alert('Ha ocurrido un error al procesar la solicitud.');
