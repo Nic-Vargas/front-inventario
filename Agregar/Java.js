@@ -8,28 +8,33 @@ boton.addEventListener("click", evento=>{
 
 let agregarProducto = async()=>{
 
-  let campos = {};
+  let campos = {
+    id : document.getElementById("id").value,
+    nombre : document.getElementById("nombre").value,
+    descripcion : document.getElementById("descripcion").value,
+    precio : document.getElementById("precio").value,
+    stock : document.getElementById("stock").value,
+    categoria : document.getElementById("categoria").value
+  };
 
-  campos.id = document.getElementById("id").value;
-  campos.nombre = document.getElementById("nombre").value;
-  campos.descripcion = document.getElementById("descripcion").value;
-  campos.precio = document.getElementById("precio").value;
-  campos.stock = document.getElementById("stock").value;
-  campos.categoria = document.getElementById("categoria").value;
-  
-  const peticion = await fetch("http://localhost:8080/producto/agregar",
-  {
-    method: 'POST',
-    headers: {
+  try {
+    
+    let username = 'admin';
+    let password = 'claveI';
+    let credentials = `${username}:${password}`;
+    let encodedCredentials = btoa(credentials);
+
+    const peticion = await fetch("http://localhost:8080/producto/agregar", {
+      method: 'POST',
+      headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(campos)
-  });
-
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${encodedCredentials}`, // Encabezado de autenticación Basic Auth
+      },
+      body: JSON.stringify(campos),
+    });
+  }catch (error) {
+    console.error('Error:', error);
+    alert('Ha ocurrido un error al procesar la solicitud.');
+  }
 }
-
-
-
-
-  
