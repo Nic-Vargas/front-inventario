@@ -19,14 +19,14 @@ let agregarProducto = async()=>{
   
   const peticion = await fetch("http://localhost:8080/producto/agregar",
   {
-    method: 'POST',
+    method: 'post',
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
     },
     body: JSON.stringify(campos)
   });
-  
+
 }
 
 
