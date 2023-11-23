@@ -21,7 +21,7 @@ ul {
     background-color: #a6e4a6; 
     display: flex;
     flex-direction: column;
-    height: 710px;
+    height: 812px;
     margin-right: auto; /
 }
 
@@ -63,7 +63,7 @@ li a:hover {
 
 .vista-central{
     width: 900px;
-    height: 400px;
+    height: 500px;
     background-color: #ffca96da;
     margin-top: 100px;
     margin-left: 180px;
@@ -74,7 +74,7 @@ li a:hover {
 
 
 .fa-icon {
-    margin: auto; /* Centra horizontalmente */
+    margin: auto;
 }
 
 

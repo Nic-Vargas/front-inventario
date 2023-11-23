@@ -35,7 +35,7 @@ let agregarProducto = async()=>{
     });
     if (peticion.ok) {
       console.log('Producto agregado correctamente');
-      alert('El producto ha sido eliminado');
+      alert('El producto ha sido agregado');
     } else {
       console.error('Error al agregar producto');
       alert('Ha ocurrido un error al eliminar el producto.');
